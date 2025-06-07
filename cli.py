@@ -9,7 +9,7 @@ def start_parser():
     )
     parser.add_argument(
         "-o", "--output",
-        default="summary.txt",
+        default="Summaries/summary.txt",
         help="Path to the output file."
     )
     args = parser.parse_args()

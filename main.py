@@ -10,5 +10,5 @@ if __name__ == '__main__':
     if process:
         atexit.register(stop_ollama, process)
     print(f"Starting summary of {args.filepath}")
-    summarize_document(filepath=args.filepath, output_path=args.output if args.output else None)
+    summarize_document(filepath=args.filepath, output_path=args.output)
     stop_ollama(process)
