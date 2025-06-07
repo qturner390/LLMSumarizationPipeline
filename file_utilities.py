@@ -31,5 +31,5 @@ def split_into_sections(text: str) -> dict:
     Takes a section of Markdown text and splits it into sections based on headers.
     Not implemented currently, additional guidance would be helpful.
     """
-    print("SPLITTING INTO SECTIONS NOT IMPLEMENTED. YET")
-    return dict();
+    print("SPLITTING INTO SECTIONS NOT IMPLEMENTED.")
+    return dict()
