@@ -1,11 +1,9 @@
 import requests
 
-OLLAMA_MODEL = 'llama3.2'
-
 OLLAMA_URL = 'http://localhost:11434/api/chat'
 
 
-def summarize_with_ollama(title: str, content: str) -> str:
+def summarize_with_ollama(title: str, content: str, model: str) -> str:
     """
     Summarizes a given section of text.
     If there is a title, this is given to the model; If not, no title is used in the prompt.
@@ -13,6 +11,7 @@ def summarize_with_ollama(title: str, content: str) -> str:
     Args:
         title: Title of the section
         content: Text of the section
+        model: Model to use for summarization
 
     Returns:
         Summary of the content. If there is an error, returns the error.
@@ -23,7 +22,7 @@ def summarize_with_ollama(title: str, content: str) -> str:
         added_text = ""
 
     payload = {
-        "model": OLLAMA_MODEL,
+        "model": model,
         "messages": [
             {
                 "role": "system",

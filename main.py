@@ -6,9 +6,9 @@ import atexit
 
 if __name__ == '__main__':
     args = start_parser()
-    process = start_ollama()
+    process = start_ollama(model=args.model)
     if process:
         atexit.register(stop_ollama, process)
     print(f"Starting summary of {args.filepath}")
-    summarize_document(filepath=args.filepath, output_path=args.output)
+    summarize_document(filepath=args.filepath, output_path=args.output, model=args.model)
     stop_ollama(process)

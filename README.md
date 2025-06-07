@@ -11,13 +11,8 @@ Note: Ollama will be used because all information remains completely private. No
 3. Once this model is downloaded, the script can be run.
 
 ## Usage
-1. Run Ollama locally using the command:
-   1. ```ollama run <model>```
-   2. Use the model that was pulled earlier.
-   3. You will see that the command line says: ```>>> Send a message (/? for help)```
-      1. You can ignore this, but leave it running
-      2. When you are done using the summarization tool, you can quit by putting ```/bye``` into the command line.
-2. Next, go to the
+1. Make sure that you can run Python files. You can use an IDE or CE of your choosing or just use the terminal.
+2. Inside the folder
 
 ### Quick start
 For development and testing you can run the CLI wrapper directly:

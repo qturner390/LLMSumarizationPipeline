@@ -12,5 +12,10 @@ def start_parser():
         default="Summaries/summary.txt",
         help="Path to the output file."
     )
+    parser.add_argument(
+        "-m", "--model",
+        default="llama3.2",
+        help="Name of the model to use for summarization."
+    )
     args = parser.parse_args()
     return args
