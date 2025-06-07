@@ -6,35 +6,28 @@ Note: Ollama will be used because all information remains completely private. No
 1. Download Ollama:
    1. https://ollama.com/download
 2. Once Ollama is downloaded locally, run the following command in your terminal:
-   1. ```ollama pull <model> e.g. llama3.2```
+   1. ```ollama pull <model>``` e.g. llama3.2
    2. To view the models that are supported go to: https://ollama.com/search
 3. Once this model is downloaded, the script can be run.
 
 ## Usage
 1. Make sure that you can run Python files. You can use an IDE or CE of your choosing or just use the terminal.
-2. Inside the folder
-
-### Quick start
-For development and testing you can run the CLI wrapper directly:
-
-```bash
-pip install -r requirements.txt
-python summarize_pdf.py <your-file.pdf>
-```
-
-This will produce a `<your-file>_summary.txt` file in the same folder.
-
-## Development plan
+2. Inside the folder ```LLMSummarizationPipeline```, run the following commands in the terminal:
+   1. ```pip install -r requirements.txt```
+      1. This will install all the dependencies to run the project.
+   2. ```python main.py <InputFilepath> -o/--output <OutputFilepath> -m/--model <model>```
+      1. The default model if none is specified is ```llama3.2```
+      2. The default output path is ```/summary.txt``` in the current folder.
+      3. The input filepath is required to run the script. 
 
 ### Core features
 - **PDF to text extraction**
-  - Use a Python PDF library such as `pdfminer` or `PyPDF2` to parse the file.
+  - Extracting the text from a .pdf or .txt file and turns this into text formatted using Markdown.
 - **Local LLM integration**
-  - Connect to the Ollama runtime and send the extracted text for summarization.
-  - Provide a way to adjust the desired summary length.
+  - Using Ollama (```llama3.2``` by default) to summarize the input text.
+  - Gives a bulleted list summary.
 - **Output management**
-  - Save the summary to a `.txt` file in the same folder as the original PDF.
-  - Optionally keep a summary history for quick reference.
+  - Save the summary to a `.txt` file.
 
 ### GUI
 - **Upload interface**
@@ -47,13 +40,10 @@ This will produce a `<your-file>_summary.txt` file in the same folder.
   - Add a "Save Summary" button to write the `.txt` file.
   - Allow opening the output folder directly from the GUI.
 
-### Packaging
-- **Command-line wrapper**
-  - Provide a small CLI for power users to run summarization without the GUI.
-- **Create an executable**
-  - Use a tool like `PyInstaller` to package the application and its dependencies into a standalone `.exe` file for Windows users.
-
 ### Nice-to-have enhancements
 - Batch processing of multiple PDFs at once.
-- Configurable LLM parameters (temperature, model choice if multiple models are available).
+- Configurable LLM parameters.
+- Fine tuning to fit certain input/output file designs.
 - Remember recent files and summaries on startup.
+- Allow editing of the summary.txt
+- Automatically extract certain tags from the input text for automatically filling output forms
