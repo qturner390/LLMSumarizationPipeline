@@ -2,6 +2,14 @@ import argparse
 
 
 def start_parser():
+    """
+    Sets up the command line interface parameters.
+
+    Args:
+
+    Returns:
+        The command line arguments.
+    """
     parser = argparse.ArgumentParser(description="Summarize a document using Ollama.")
     parser.add_argument(
         'filepath',
@@ -16,6 +24,11 @@ def start_parser():
         "-m", "--model",
         default="llama3.2",
         help="Name of the model to use for summarization."
+    )
+    parser.add_argument(
+        "-k", "--keywords",
+        default="",
+        help="Comma separated keywords."
     )
     args = parser.parse_args()
     return args
