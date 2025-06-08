@@ -15,10 +15,12 @@ Note: Ollama will be used because all information remains completely private. No
 2. Inside the folder ```LLMSummarizationPipeline```, run the following commands in the terminal:
    1. ```pip install -r requirements.txt```
       1. This will install all the dependencies to run the project.
-   2. ```python main.py <InputFilepath> -o/--output <OutputFilepath> -m/--model <model>```
-      1. The default model if none is specified is ```llama3.2```
-      2. The default output path is ```/summary.txt``` in the current folder.
-      3. The input filepath is required to run the script. 
+   2. ```python main.py <inputFilepath> -o/--output <uutputFilepath> -m/--model <model> -k/--keywords <keyword1>,<keyword2>,...,<keywordn>```
+      1. The input filepath is the only required parameter, the rest are optional.
+      2. The default model if none is specified is ```llama3.2```
+      3. The default output path is ```/summary.txt``` in the current folder.
+      4. If keywords are provided, extraction is done, but otherwise, extraction will not run.
+         1. *Note:* Extraction is buggy at the moment. Performance may be improved when using a larger and more capable model.
 
 ### Core features
 - **PDF to text extraction**
@@ -26,12 +28,13 @@ Note: Ollama will be used because all information remains completely private. No
 - **Local LLM integration**
   - Using Ollama (```llama3.2``` by default) to summarize the input text.
   - Gives a bulleted list summary.
+  - Extracts keywords from a text.
 - **Output management**
   - Save the summary to a `.txt` file.
 
 ### GUI
 - **Upload interface**
-  - Build a simple window (e.g. using Tkinter or PySimpleGUI) with an upload button and drag-and-drop area.
+  - Build a simple window with an upload button and drag-and-drop area.
   - Show progress while processing the PDF.
 - **Side-by-side viewer**
   - Display the original PDF text or pages on the left.
