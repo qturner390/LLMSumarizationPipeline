@@ -1,5 +1,5 @@
 from file_utilities import read_file
-from summarizer import summarize_with_ollama
+from summarizer import summarize_markdown_sections
 from extractor import extract_with_ollama
 
 
@@ -18,7 +18,7 @@ def summarize_document(filepath: str, keywords: [str], output_path: str = 'Summa
     """
     text = read_file(filepath)
     print("Starting summarization...")
-    summary = summarize_with_ollama("", text, model)
+    summary = summarize_markdown_sections("", text, model)
 
     if keywords == [""]:
         print("No keywords provided, skipping extraction.")

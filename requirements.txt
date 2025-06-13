@@ -1,3 +1,10 @@
-requests
 argparse
+requests
 pymupdf4llm
+os
+tkinter
+atexit
+subprocess
+time
+typing
+re
